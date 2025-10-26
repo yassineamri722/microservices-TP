@@ -74,11 +74,11 @@ pipeline {
 
                             # --- CHOIX DE LA MÉTHODE DE DÉPLOIEMENT ---
                             # Méthode 1: Non fiable, mais ne nécessite pas de config systemd
-                            JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /var/www/my-app/app.jar > /var/www/my-app/app.log 2>&1 &
+                            #JENKINS_NODE_COOKIE=dontKillMe nohup java -jar /var/www/my-app/app.jar > /var/www/my-app/app.log 2>&1 &
 
                             # Méthode 2: Robuste et recommandée
-                            #echo "Redémarrage du service my-app via systemd..."
-                            #sudo systemctl restart my-app.service
+                            echo "Redémarrage du service my-app via systemd..."
+                            sudo systemctl restart my-app.service
                         """
 
                         echo "Application redémarrée avec la version ${version} de Nexus."
