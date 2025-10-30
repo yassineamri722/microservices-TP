@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: my-country-container
-        image: yassineamri/my-country-service:BUILD_NUMBER
+        image: yassineamri/my-country-service
         ports:
         - containerPort: 8080
